@@ -125,6 +125,9 @@ export default function RootLayout({
       >
         {children}
         <ToastContainer position="bottom-right" autoClose={5000} />
+        {metadataConfig.gaMeasurementId && (
+          <GoogleAnalytics gaId={metadataConfig.gaMeasurementId} />
+        )}
       </body>
     </html>
   );
