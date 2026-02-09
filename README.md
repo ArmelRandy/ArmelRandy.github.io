@@ -60,6 +60,7 @@ Controls global settings: site title, logo, colors, font, and which sections app
 | `primaryColor` | `string` | Primary accent color (hex) |
 | `secondaryColor` | `string` | Secondary accent color (hex) |
 | `font` | `string` | Font family (see options below) |
+| `gaMeasurementId` | `string?` | Google Analytics Measurement ID (e.g. `G-XXXXXXXXXX`) |
 | `sectionOrder` | `string[]` | Order of homepage sections. Use any combination of: `profile`, `articles`, `resume`, `talks` |
 
 **Available fonts:** `monaspace-neon`, `montserrat`, `roboto`, `open-sans`, `lato`, `poppins`, `inter`, `raleway`, `nunito`, `playfair-display`

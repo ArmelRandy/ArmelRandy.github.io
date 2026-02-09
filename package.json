@@ -10,6 +10,7 @@
     "format": "biome format --write"
   },
   "dependencies": {
+    "@next/third-parties": "^16.1.6",
     "@tabler/icons-react": "^3.36.1",
     "clsx": "^2.1.1",
     "katex": "^0.16.28",

@@ -1,6 +1,7 @@
 "use client";
 
 import {
+  IconBrandGoogleAnalytics,
   IconHeading,
   IconPalette,
   IconPhoto,
@@ -32,6 +33,7 @@ export default function GeneratorMetadataPage() {
   const [primaryColor, setPrimaryColor] = useState<string>("#8b5cf6");
   const [secondaryColor, setSecondaryColor] = useState<string>("#42ff7b");
   const [font, setFont] = useState<FontOption>("monaspace-neon");
+  const [gaMeasurementId, setGaMeasurementId] = useState<string>("");
   const [sectionOrder, setSectionOrder] = useState<
     MetadataType["sectionOrder"]
   >(["profile", "articles", "resume", "talks"]);
@@ -43,9 +45,18 @@ export default function GeneratorMetadataPage() {
       primaryColor,
       secondaryColor,
       font,
+      gaMeasurementId: gaMeasurementId || undefined,
       sectionOrder,
     }),
-    [title, logo, primaryColor, secondaryColor, font, sectionOrder],
+    [
+      title,
+      logo,
+      primaryColor,
+      secondaryColor,
+      font,
+      gaMeasurementId,
+      sectionOrder,
+    ],
   );
 
   useEffect(() => {
@@ -58,6 +69,11 @@ export default function GeneratorMetadataPage() {
       setSecondaryColor(secondaryColor);
       if (font) {
         setFont(font);
+      }
+      if ((rawMetadataData as MetadataType).gaMeasurementId) {
+        setGaMeasurementId(
+          (rawMetadataData as MetadataType).gaMeasurementId || "",
+        );
       }
       if (sectionOrder) {
         setSectionOrder(sectionOrder);
@@ -141,6 +157,14 @@ export default function GeneratorMetadataPage() {
             .map((w) => w.charAt(0).toUpperCase() + w.slice(1))
             .join(" "),
         }))}
+        className="grow"
+      />
+
+      <Input
+        icon={<IconBrandGoogleAnalytics />}
+        value={gaMeasurementId}
+        onChange={setGaMeasurementId}
+        placeholder="Google Analytics Measurement ID (e.g. G-XXXXXXXXXX)"
         className="grow"
       />
 
