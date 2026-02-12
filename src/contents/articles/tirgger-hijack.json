@@ -7,6 +7,11 @@
     "LLM Safety",
     "Mechanistic Interpretability"
   ],
-  "links": [],
+  "links": [
+    {
+      "label": "ArXiv",
+      "url": "http://arxiv.org/abs/2602.10382"
+    }
+  ],
   "authors": "Théo Lasnier, Wissam Antoun, Francis Kulumba, Djamé Seddah"
 }

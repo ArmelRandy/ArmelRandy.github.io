@@ -7,6 +7,11 @@
     "Benchmark",
     "Finance"
   ],
-  "links": [],
-  "authors": "Virginie Mouilleron$^*$, Théo Lasnier$^*$, Djamé Seddah$^*$"
+  "links": [
+    {
+      "label": "ArXiv",
+      "url": "http://arxiv.org/abs/2602.10384"
+    }
+  ],
+  "authors": "Virginie Mouilleron, Théo Lasnier, Djamé Seddah"
 }

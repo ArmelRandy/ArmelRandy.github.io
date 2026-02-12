@@ -11,6 +11,7 @@ import Header from "./header";
 import Profile from "./profile";
 import Resume from "./resume";
 import Talk from "./talk";
+import { IconArrowRight, IconPlus } from "@tabler/icons-react";
 
 type HomePageProps = {
   metadataData: Metadata;
@@ -47,7 +48,19 @@ export default function HomePage({
               return (
                 articlesData.length > 0 && (
                   <div key="articles" className="flex flex-col gap-4">
-                    <h2 className="text-3xl font-bold">Recent Articles</h2>
+                    <div className="flex items-center justify-between">
+                      <h2 className="text-3xl font-bold">Recent Articles</h2>
+                      {articlesData.length > 5 && (
+                        <Link
+                          href="/article"
+                          className="text-sm rounded-lg transition-colors px-3 py-1 border border-gray-300 self-center flex items-center gap-2 bg-white"
+                        >
+                          See More Articles
+                          <IconArrowRight className="w-4 h-4 inline" />
+                        </Link>
+                      )}
+                    </div>
+
                     <div className="flex flex-col gap-4">
                       {articlesData.slice(0, 5).map((article) =>
                         article.content ? (
@@ -63,15 +76,6 @@ export default function HomePage({
                         ),
                       )}
                     </div>
-
-                    {articlesData.length > 5 && (
-                      <Link
-                        href="/article"
-                        className="px-6 py-3 bg-blue-600 text-white rounded-lg hover:bg-blue-700 transition-colors text-center font-semibold"
-                      >
-                        See More Articles
-                      </Link>
-                    )}
                   </div>
                 )
               );

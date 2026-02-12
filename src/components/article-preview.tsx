@@ -23,7 +23,10 @@ export default function ArticlePreview({
       className={clsx(
         "border rounded-lg border-gray-300 p-4 flex gap-4 items-center bg-white transition-colors group",
         className,
-        { "hover:border-(--secondary)": data.content },
+        {
+          "hover:border-(--secondary)":
+            data.content || (data.links && data.links.length > 0),
+        },
       )}
       {...props}
     >
